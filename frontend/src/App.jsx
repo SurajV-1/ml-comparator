@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import './index.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://ml-comparator-api.onrender.com/api';
 
 const DATASET_OPTIONS = [
   { value: 'sine', label: '🌊 Sine Wave' },
@@ -101,12 +101,12 @@ export default function App() {
   // Build chart data
   const chartData = results
     ? results.xValues.map((x, i) => ({
-        x: Number(x.toFixed(3)),
-        Actual: Number(results.yActual[i].toFixed(4)),
-        Linear: Number(results.yLinear[i].toFixed(4)),
-        Polynomial: Number(results.yPoly[i].toFixed(4)),
-        SVR: Number(results.ySVR[i].toFixed(4)),
-      }))
+      x: Number(x.toFixed(3)),
+      Actual: Number(results.yActual[i].toFixed(4)),
+      Linear: Number(results.yLinear[i].toFixed(4)),
+      Polynomial: Number(results.yPoly[i].toFixed(4)),
+      SVR: Number(results.ySVR[i].toFixed(4)),
+    }))
     : [];
 
   const getR2Color = (r2) => {
@@ -146,7 +146,7 @@ export default function App() {
           <div className="hero-text">
             <h2>Regression Model Comparison</h2>
             <p>Train and compare Linear, Polynomial, and SVR models on various datasets.
-               Tune hyperparameters, visualize predictions, and evaluate performance metrics interactively.</p>
+              Tune hyperparameters, visualize predictions, and evaluate performance metrics interactively.</p>
             <div className="hero-badges">
               <span className="model-badge linear">📏 Linear Regression</span>
               <span className="model-badge poly">🔢 Polynomial Regression</span>
