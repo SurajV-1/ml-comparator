@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import './index.css';
 
-const API_URL = 'https://ml-comparator-api.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://ml-comparator.onrender.com/api';
 
 const DATASET_OPTIONS = [
   { value: 'sine', label: '🌊 Sine Wave' },
